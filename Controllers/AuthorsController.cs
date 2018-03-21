@@ -21,15 +21,13 @@ namespace Fisher.Bookstore.Api.Controllers
                 this.db.Authors.Add(new Author 
                 {
                     Id = 1,
-                    FirstName = "Kevin",
-                    LastName = "Miller"
+                    Name = "Kevin Miller",
                 });
 
                 this.db.Authors.Add(new Author
                 {
                     Id = 2,
-                    FirstName = "Matthew",
-                    LastName = "Creel"
+                    Name = "Matthew Creel",
                 });
 
                 this.db.SaveChanges();
@@ -86,8 +84,7 @@ namespace Fisher.Bookstore.Api.Controllers
                 return NotFound();
             }
 
-            currentAuthor.FirstName = newAuthor.FirstName;
-            currentAuthor.LastName = newAuthor.LastName;
+            currentAuthor.Name = newAuthor.Name;
             
 
             this.db.Authors.Update(currentAuthor);
